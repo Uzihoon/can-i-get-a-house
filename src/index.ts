@@ -1,7 +1,7 @@
-import Store from "./store";
 import getForSaleHouse from "./api";
 import { formatDate } from "./util";
 import createIssue from "./github";
+import Store from "./store";
 
 class Controller {
   private store: Store;
