@@ -1,0 +1,30 @@
+{
+  "name": "can-i-get-a-house",
+  "version": "1.0.0",
+  "description": "집을 구할 수 있을까요?",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uzihoon/can-i-get-a-house.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Uzihoon/can-i-get-a-house/issues"
+  },
+  "homepage": "https://github.com/Uzihoon/can-i-get-a-house#readme",
+  "devDependencies": {
+    "ts-lint": "^4.5.1",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "actions-toolkit": "^5.0.0",
+    "axios": "^0.19.2",
+    "query-string": "^6.13.1"
+  }
+}
