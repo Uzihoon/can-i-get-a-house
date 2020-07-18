@@ -4,6 +4,7 @@ export interface Area {
   topLat: number;
   bottomLat: number;
   title: string;
+  
 }
 
 export interface Option {
@@ -19,24 +20,26 @@ export interface Option {
   cortarNo: number;
 }
 
-class Store {
-  private areaList: Area[];
+interface State {
+  option: Option;
+  areaList: Area[];
+}
 
-  private option: Option = {
-    priceMax: 40000,
-    priceMin: 0,
-    areaMin: 69.4,
-    areaMax: 900000000,
-    oldBuildYears: 25,
-    minHouseHoldCount: 100,
-    maxHouseHoldCount: 2000,
-    zoom: 15,
-    cortarNo: 1154510300,
-    realEstateType: "APT",
-  };
-
-  constructor() {
-    this.areaList = [
+export default class Store {
+  private state: State = {
+    option: {
+      priceMax: 40000,
+      priceMin: 0,
+      areaMin: 69.4,
+      areaMax: 900000000,
+      oldBuildYears: 25,
+      minHouseHoldCount: 100,
+      maxHouseHoldCount: 2000,
+      zoom: 15,
+      cortarNo: 1154510300,
+      realEstateType: "APT",
+    },
+    areaList: [
       {
         leftLon: 126.8547309,
         rightLon: 126.9411624,
@@ -44,10 +47,10 @@ class Store {
         bottomLat: 37.4282325,
         title: "금천구 매물",
       },
-    ];
-  }
+    ],
+  };
 
-  getStore(key: "areaList" | "option") {
-    return this[key];
+  getStore<T extends keyof State>(key: T): State[T] {
+    return this.state[key];
   }
 }
