@@ -18,6 +18,7 @@ jobs:
       - name: 이슈 생성
         run: |
           npm ci
+          npm run build
           npm run fetch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

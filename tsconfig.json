@@ -2,10 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "module": "es6",
-    "declaration": true,
+    "declaration": false,
     "outDir": "./public",
     "strict": true,
-    "sourceMap": true
+    "sourceMap": false,
+   
   },
   "include": ["src"],
   "exclude": ["node_modules", "**/__tests__/*"]

@@ -1,8 +1,9 @@
-import { Toolkit } from "actions-toolkit";
+const Action = require("actions-toolkit");
+const Toolkit = Action.Toolkit;
 
 export default function createIssue(title: string, body: string) {
   Toolkit.run(
-    async (tools) => {
+    async (tools: any) => {
       tools.log.info(`Creating new issue ${title}`);
 
       // Create the new issue
