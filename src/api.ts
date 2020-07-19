@@ -1,10 +1,25 @@
-import axios from "axios";
-import { stringify } from "query-string";
-import { Area, Option } from "./store";
+const axios = require("axios");
+const { stringify } = require("query-string");
 
 const url = "https://new.land.naver.com/api/complexes/single-markers/2.0";
 
-interface Param extends Area, Option {}
+interface Param {
+  priceMin: number; // 최소 금액
+  priceMax: number; // 최대 금액
+  areaMin: number; // 최소 평수
+  areaMax: number; // 최대 평수
+  oldBuildYears: number; // 아파트 년식
+  minHouseHoldCount: number; // 최소 아파트 세대수
+  maxHouseHoldCount: number; // 최대 아파트 세대수
+  realEstateType: "APT"; // 매물 타입 - 아파트 타입만 조회한다.
+  zoom: number;
+  cortarNo: number;
+  leftLon: number;
+  rightLon: number;
+  topLat: number;
+  bottomLat: number;
+  title: string;
+}
 
 interface Data {
   markerId: string;

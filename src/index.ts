@@ -1,10 +1,10 @@
-import getForSaleHouse from "./api";
-import { formatDate } from "./util";
-import createIssue from "./github";
-import Store from "./store";
+const getForSaleHouse = require("./api");
+const createIssue = require("./github");
+const { formatDate } = require("./util");
+const Store = require("./store");
 
 class Controller {
-  private store: Store;
+  private store: typeof Store;
 
   constructor() {
     this.store = new Store();
@@ -13,14 +13,14 @@ class Controller {
   init() {
     const areaList = this.store.getStore("areaList");
     const option = this.store.getStore("option");
-    const saleList = areaList.map(async (area) => {
+    const saleList = areaList.map(async (area: any) => {
       const param = { ...option, ...area };
       const data = await getForSaleHouse(param);
       const title = `## ${area.title} 매물 리스트`;
       const sales: string[] = [];
 
       if (data && data.length > 0) {
-        data.map((sale) => {
+        data.map((sale: any) => {
           sales.push(
             `
             - 아파트 이름 : ${sale.complexName}
