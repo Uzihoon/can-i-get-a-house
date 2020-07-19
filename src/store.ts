@@ -4,7 +4,6 @@ export interface Area {
   topLat: number;
   bottomLat: number;
   title: string;
-  
 }
 
 export interface Option {
@@ -25,7 +24,7 @@ interface State {
   areaList: Area[];
 }
 
-export default class Store {
+class Store {
   private state: State = {
     option: {
       priceMax: 40000,
@@ -54,3 +53,5 @@ export default class Store {
     return this.state[key];
   }
 }
+
+module.exports = Store;

@@ -65,8 +65,7 @@ interface Data {
   totalArticleCount: number;
   existPriceTab: boolean;
 }
-
-export default async function getForSaleHouse(param: Param) {
+async function getForSaleHouse(param: Param) {
   try {
     const { data } = await axios.get(`${url}?${stringify(param)}`, {
       headers: { "content-type": "application/json" },
@@ -75,3 +74,7 @@ export default async function getForSaleHouse(param: Param) {
     return data as Data[];
   } catch (error) {}
 }
+
+export {};
+
+module.exports = getForSaleHouse;
