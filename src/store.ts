@@ -17,6 +17,8 @@ export interface Option {
   realEstateType: "APT"; // 매물 타입 - 아파트 타입만 조회한다.
   zoom: number;
   cortarNo: number;
+  tradeType: string;
+  priceType: string;
 }
 
 interface State {
@@ -37,6 +39,8 @@ class Store {
       zoom: 15,
       cortarNo: 1154510300,
       realEstateType: "APT",
+      tradeType: "A1",
+      priceType: "RETAIL",
     },
     areaList: [
       {

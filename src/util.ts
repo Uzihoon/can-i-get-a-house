@@ -7,6 +7,7 @@ function formatDate() {
   return `${year}년 ${month}월 ${date}일`;
 }
 
+
 export {};
 
 module.exports = formatDate;

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "fetch": "node public/index.js"
+    "fetch": "node public/index.js",
+    "test": "tsc && node public"
   },
   "repository": {
     "type": "git",
